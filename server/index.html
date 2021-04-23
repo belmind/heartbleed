@@ -1,0 +1,99 @@
+<html>
+  <head>
+	<link rel="icon" href="icon.png">
+	<title>Super Awesome Company, Inc</title>
+    <style>
+		body {
+			font-family: "Open Sans", sans-serif;
+			height: 100vh;
+			background: url("https://images.unsplash.com/photo-1529539795054-3c162aab037a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3300&q=80") 50% fixed;
+			background-size: cover;
+		}
+		a {
+			font-size: 1.2em;
+			color: #2196f3;
+			text-decoration: none;
+  		}
+
+		.wrapper {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+			min-height: 100%;
+			padding: 20px;
+			background: rgba(darken(#2196f3, 40%), 0.85);
+		}
+
+		.login {
+			border-radius: 2px 2px 5px 5px;
+			padding: 10px 20px 20px 20px;
+			width: 90%;
+			max-width: 320px;
+			background: #ffffff;
+			position: relative;
+			padding-bottom: 80px;
+			box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.3);
+		}
+
+		input {
+			display: block;
+			padding: 15px 10px;
+			margin-bottom: 10px;
+			width: 100%;
+			border: 1px solid #ddd;
+			transition: border-width 0.2s ease;
+			border-radius: 2px;
+			color: #ccc;
+			outline: none;
+			color: #444;
+			border-color: #2196f3;
+			border-left-width: 35px;
+		}
+
+		button {
+			width: 100%;
+			height: 100%;
+			padding: 10px 10px;
+			background:#2196f3;
+			color: #fff;
+			display: block;
+			border: none;
+			margin-top: 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			max-height: 60px;
+			border: 0px solid rgba(0, 0, 0, 0.1);
+			border-radius: 0 0 2px 2px;
+			transform: rotateZ(0deg);
+
+			transition: all 0.1s ease-out;
+			border-bottom-width: 7px;
+		}
+
+    </style>
+  </head>
+  <body>
+	<div class="wrapper">
+		<form class="login">
+		  <p class="title">Log in</p>
+		  <input type="text" placeholder="Username" autofocus/>
+		  <input type="password" placeholder="Password" />
+		  <a href="#">Forgot your password?</a>
+		  <button onclick="logIn()">
+			<span>Log in</span>
+		  </button>
+		</form>
+		</p>
+	  </div>
+	<script>
+	function logIn() {
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("POST", "https://127.0.0.1:8443?username=Henry&password=password123", true);
+		xhttp.send();
+	}
+	</script>
+  </body>
+</html>
