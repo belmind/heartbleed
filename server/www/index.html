@@ -2,7 +2,7 @@
   <head>
     <title>Heartbleed: Still Bleeding</title>
     <script>
-      document.cookie = "heartbleed";
+      document.cookie = "USER_SESSION=AS1D&R31VBA423DS%DAB231";
     </script>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/animate.min.css" rel="stylesheet" />
@@ -23,8 +23,7 @@
         id="login-form"
         method="get"
         style="flex-grow: 1"
-        class="d-flex flex-column justify-content-center animate__animated animate__fadeIn animate__delay-1s del05"
-        onsubmit="submitData();return false;"
+        class="d-flex flex-column justify-content-center"
       >
         <div class="d-flex justify-content-center">
           <div class="d-flex flex-column" style="width: 375px">
@@ -54,10 +53,10 @@
         </div>
       </form>
       <div>
-        <footer class="pt-4 my-md-5 pt-md-5 border-top animate__animated animate__fadeIn animate__delay-1s">
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
           <div class="row">
             <div class="col-4 pr-4">
-              <h5>👋 Hello!</h5>
+              <h5>&#128075; Hello!</h5>
               <p>
                 We are Mateo & Belmin, and this is our final project for the
                 course TDA602 - Language Based Security @ Chalmers University of
@@ -77,7 +76,7 @@
               </p>
             </div>
             <div class="col-4">
-              <h5>👨‍💻 Our contribution</h5>
+              <h5>&#128187; Our contribution</h5>
               <p>
                 This is a sample login page that sends a GET request to
                 /index.html with the username and password as query string
@@ -91,17 +90,6 @@
         </footer>
       </div>
     </div>
-    <script>
-      function submitData() {
-        var username = $("#username").val();
-        var password = $("#password").val();
-
-        $.get( "index.html?username=" + username + "&password=" + password, function( data ) {});
-        $("#username").val("");
-        $("#password").val("");
-      }
-
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
