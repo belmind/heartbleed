@@ -5,21 +5,33 @@
       document.cookie = "heartbleed";
     </script>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/animate.min.css" rel="stylesheet" />
+    <style>
+      .del15{
+        --animate-delay: 1.5s
+      }
+      .del05{
+        --animate-delay: 0.5s
+      }
+    </style>
   </head>
   <body class="p-2">
     <div class="container d-flex flex-column h-100">
       <form
         name="input"
         action="index.html"
+        id="login-form"
         method="get"
         style="flex-grow: 1"
-        class="d-flex flex-column justify-content-center"
+        class="d-flex flex-column justify-content-center animate__animated animate__fadeIn animate__delay-1s del05"
+        onsubmit="submitData();return false;"
       >
         <div class="d-flex justify-content-center">
           <div class="d-flex flex-column" style="width: 375px">
-            <h3 class="text-center">Welcome! Please sign in.</h3>
+            <h3 class="text-center">Welcome! Please sign in.</span></h3>
             <input
               type="text"
+              id="username"
               name="username"
               class="form-control mt-2"
               placeholder="Email address"
@@ -27,6 +39,7 @@
 
             <input
               type="password"
+              id="password"
               name="password"
               class="form-control mt-2"
               placeholder="Password"
@@ -41,10 +54,10 @@
         </div>
       </form>
       <div>
-        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <footer class="pt-4 my-md-5 pt-md-5 border-top animate__animated animate__fadeIn animate__delay-1s">
           <div class="row">
             <div class="col-4 pr-4">
-              <h5>Hello! &#128075;</h5>
+              <h5>👋 Hello!</h5>
               <p>
                 We are Mateo & Belmin, and this is our final project for the
                 course TDA602 - Language Based Security @ Chalmers University of
@@ -53,8 +66,8 @@
             </div>
             <div class="col-4">
               <h5>
+                <span><img src="./assets/heartbleed.png" alt="heartbleed-logo" class="animate__animated animate__heartBeat animate__delay-3s" width="25" />
                 Heartbleed
-                <!-- <img src="./assets/heartbleed.png" alt="" width="25" /> -->
               </h5>
               <p>
                 Heartbleed is an exploit that exists in older versions of
@@ -64,7 +77,7 @@
               </p>
             </div>
             <div class="col-4">
-              <h5>Our contribution</h5>
+              <h5>👨‍💻 Our contribution</h5>
               <p>
                 This is a sample login page that sends a GET request to
                 /index.html with the username and password as query string
@@ -72,13 +85,23 @@
               </p>
             </div>
             <div class="col-12 d-flex justify-content-center">
-              <!-- <img src="./assets/heartbleed.png" alt="" width="50"> -->
               <small class="text-muted">Mateo Raspudic & Belmin Dervisevic &copy; 2021</small>
             </div>
           </div>
         </footer>
       </div>
     </div>
+    <script>
+      function submitData() {
+        var username = $("#username").val();
+        var password = $("#password").val();
+
+        $.get( "index.html?username=" + username + "&password=" + password, function( data ) {});
+        $("#username").val("");
+        $("#password").val("");
+      }
+
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
