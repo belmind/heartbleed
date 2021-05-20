@@ -3,21 +3,28 @@ const faker = require("faker");
 
 (async () => {
   const browser = await puppeteer.launch({
+    // launch chromium browser
     headless: true,
-    ignoreHTTPSErrors: true,
+    ignoreHTTPSErrors: true, // Needed because vulnerable OpenSSL version
   });
   for (let i = 0; i < 1000; i++) {
-    let name = faker.internet.email();
-    let password = faker.internet.password();
-    const page = await browser.newPage();
+    // 1000 fake users
+    let email = faker.internet.email(); // generate email
+    let password = faker.internet.password(); // generate password
+    const page = await browser.newPage(); // open a new page
     await page.goto(
-      `https://www.localhost:8443/index.html?username=${name}&password=${password}`
+      // go to vulnerable site
+      `https://www.localhost:8443/index.html?username=${email}&password=${password}`
     );
     console.log("---------------------------");
     console.log(
-      name + " with password " + password + " successfully logged in!"
+      "INFO:" +
+        email +
+        " with password " +
+        password +
+        " successfully logged in!"
     );
-    await page.close();
+    await page.close(); // close page
   }
-  await browser.close();
+  await browser.close(); // close browser
 })();
