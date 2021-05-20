@@ -11,6 +11,14 @@
 - Run the container with a port mapping `docker run -d -p 8443:443 hmlio/vaas-cve-2014-0160`
 - Open your browser and visit `https://localhost:8443/`
 
+## Spoof data
+
+```
+cd data_spoof
+npm install
+node send_data.js
+```
+
 ## Edit frontend
 
 ### One file

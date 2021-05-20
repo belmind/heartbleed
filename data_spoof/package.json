@@ -1,0 +1,26 @@
+{
+  "name": "heartbleed",
+  "version": "1.0.0",
+  "description": "## Execute the heartbleed exploit",
+  "main": "send_data.js",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "node-fetch": "^2.6.1",
+    "puppeteer": "^9.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "node send_data.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BelminD/heartbleed.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BelminD/heartbleed/issues"
+  },
+  "homepage": "https://github.com/BelminD/heartbleed#readme"
+}

@@ -2,7 +2,13 @@
   <head>
     <title>Heartbleed: Still Bleeding</title>
     <script>
-      document.cookie = "USER_SESSION=AS1D&R31VBA423DS%DAB231";
+      function uuidv4() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+        });
+      }
+      document.cookie = "USER_SESSION="+uuidv4()+"&KEY=TDA602_RULEZ";
     </script>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/animate.min.css" rel="stylesheet" />

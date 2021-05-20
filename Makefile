@@ -1,5 +1,5 @@
 spoof:
-	python send_data.py
+	node data_spoof/send_data.js
 
 heartbleed:
 	python heartbleed.py localhost -p 8443 | less
